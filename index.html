@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>NEONFORGE</title>
+
+<link
+  rel="stylesheet"
+  href="style.css"
+>
+
+</head>
+
+
+<body>
+
+<div class="background"></div>
+
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <div class="logo">
+      N
+    </div>
+
+    <div>
+
+      <strong>
+        NEONFORGE
+      </strong>
+
+      <span>
+        CS2 UPGRADE
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <nav>
+
+    <button class="nav active">
+      АПГРЕЙД
+    </button>
+
+    <button class="nav">
+      ИНВЕНТАРЬ
+    </button>
+
+    <button class="nav">
+      ИСТОРИЯ
+    </button>
+
+  </nav>
+
+
+  <div class="account">
+
+    <span id="currentUser">
+      Гость
+    </span>
+
+    <button id="loginButton">
+      Войти
+    </button>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<section
+  id="auth"
+  class="auth"
+>
+
+  <div class="auth-card">
+
+    <div class="logo big">
+      N
+    </div>
+
+    <h1>
+      NEONFORGE
+    </h1>
+
+    <p>
+      Создай демо-аккаунт
+      и начни апгрейд.
+    </p>
+
+
+    <input
+      id="username"
+      type="text"
+      placeholder="Имя пользователя"
+      maxlength="20"
+    >
+
+
+    <div class="auth-buttons">
+
+      <button id="registerButton">
+        Регистрация
+      </button>
+
+      <button
+        id="loginExisting"
+        class="secondary"
+      >
+        Войти
+      </button>
+
+    </div>
+
+
+    <div id="authError"></div>
+
+  </div>
+
+</section>
+
+
+
+<section
+  id="app"
+  class="hidden"
+>
+
+
+<section class="hero">
+
+  <div>
+
+    <div class="live-label">
+      <i></i>
+      LIVE UPGRADE SYSTEM
+    </div>
+
+    <h1>
+      Подними свой<br>
+      <span>инвентарь.</span>
+    </h1>
+
+    <p>
+      Выбери предмет и цель.
+      Чем выше множитель —
+      тем сложнее апгрейд.
+    </p>
+
+  </div>
+
+
+  <div class="balance">
+
+    <small>
+      ДЕМО-БАЛАНС
+    </small>
+
+    <strong id="balance">
+      $0.00
+    </strong>
+
+    <button id="addBalance">
+      + Добавить 25
+    </button>
+
+  </div>
+
+</section>
+
+
+
+<section class="game">
+
+
+<!-- SOURCE -->
+
+<div class="panel">
+
+  <div class="panel-header">
+
+    <div>
+
+      <small>
+        ШАГ 01
+      </small>
+
+      <h2>
+        Твой предмет
+      </h2>
+
+    </div>
+
+    <button id="clearSource">
+      Очистить
+    </button>
+
+  </div>
+
+
+  <div
+    id="sourceItems"
+    class="items"
+  ></div>
+
+</div>
+
+
+
+<!-- CENTER -->
+
+<div class="upgrade">
+
+  <div class="target">
+
+    <small>
+      ЦЕЛЬ
+    </small>
+
+    <div
+      id="targetIcon"
+      class="target-icon"
+    >
+      ?
+    </div>
+
+    <h3 id="targetName">
+      Выбери цель
+    </h3>
+
+    <div
+      id="targetPrice"
+      class="target-price"
+    >
+      $0.00
+    </div>
+
+  </div>
+
+
+  <div class="statistics">
+
+    <div class="chance-circle">
+
+      <span id="chance">
+        0%
+      </span>
+
+      <small>
+        ШАНС
+      </small>
+
+    </div>
+
+
+    <div>
+
+      <div
+        id="multiplier"
+        class="multiplier"
+      >
+        x0.00
+      </div>
+
+      <small class="multiplier-label">
+        МНОЖИТЕЛЬ
+      </small>
+
+    </div>
+
+  </div>
+
+
+  <button
+    id="upgradeButton"
+    class="upgrade-button"
+    disabled
+  >
+    ВЫБРАТЬ ЦЕЛЬ
+  </button>
+
+
+  <div
+    id="result"
+    class="result"
+  ></div>
+
+</div>
+
+
+
+<!-- TARGET -->
+
+<div class="panel">
+
+  <div class="panel-header">
+
+    <div>
+
+      <small>
+        ШАГ 02
+      </small>
+
+      <h2>
+        Цель апгрейда
+      </h2>
+
+    </div>
+
+    <span class="hint">
+      Дороже → сложнее
+    </span>
+
+  </div>
+
+
+  <div
+    id="targetItems"
+    class="items"
+  ></div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- HISTORY -->
+
+<section class="panel history">
+
+  <div class="panel-header">
+
+    <div>
+
+      <small>
+        АКТИВНОСТЬ
+      </small>
+
+      <h2>
+        История
+      </h2>
+
+    </div>
+
+  </div>
+
+
+  <div id="historyList"></div>
+
+</section>
+
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+  NEONFORGE © 2026
+  · ДЕМО-ИГРА
+  · ВИРТУАЛЬНЫЕ ПРЕДМЕТЫ
+
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
